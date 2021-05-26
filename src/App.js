@@ -48,8 +48,8 @@ function App() {
         description= "footer desc" 
         song= "waiting for love - avicii"
         likes={123} 
-        messages={321} 
-        shares={123}
+        messages={400} 
+        shares={200}
         />
       </div>
     </div>
