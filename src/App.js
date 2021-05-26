@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import Video from "./Video.js"
+import db from "./firebase";
 
 function App() {
   const [videos, setVideos] = useState([])
@@ -14,15 +15,17 @@ function App() {
     <div className="app">
       <div className="app_videos">
         {videos.map(
-          <Video 
-          url= {url}
-          channel= {channel} 
-          description= {description}
-          song= {song}
-          likes={likes} 
-          messages={messages} 
-          shares={shares}
+          ({ url, channel, description, song, likes, messages, shares}) => (
+            <Video 
+            url= {url}
+            channel= {channel} 
+            description= {description}
+            song= {song}
+            likes={likes} 
+            messages={messages} 
+            shares={shares}
           />
+          )
         )} 
         {/* <Video
         url= "https://v16.tiktokcdn.com/100d15ccf7176a1791418036595637c7/60ae4638/video/tos/useast2a/tos-useast2a-ve-0068c002/0d093075898c4512b04915e04b61e539/?a=1233&br=3794&bt=1897&cd=0%7C0%7C1&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&l=202105260659250101151531120D145A91&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anI6eTtyNmZzNDMzNzczM0ApOWZoNDM6aWQ2Nzw5NWVlaWdfYWhjNGFtc3FgLS1kMTZzczU1MDUuYWEzYy1eNDZjYzM6Yw%3D%3D&vl=&vr="
